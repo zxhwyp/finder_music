@@ -26,9 +26,9 @@ import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
- * MusicFinderPlugin
+ * FindermusicPlugin
  */
-public class MusicFinderPlugin implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
+public class FindermusicPlugin implements MethodCallHandler, PluginRegistry.RequestPermissionsResultListener {
   private final MethodChannel channel;
 
   private static final int REQUEST_CODE_STORAGE_PERMISSION = 3777;
@@ -36,7 +36,7 @@ public class MusicFinderPlugin implements MethodCallHandler, PluginRegistry.Requ
   private Activity activity;
   private Map<String, Object> arguments;
   private boolean executeAfterPermissionGranted;
-  private static MusicFinderPlugin instance;
+  private static FindermusicPlugin instance;
   private Result pendingResult;
 
   //MusicPlayer
@@ -51,18 +51,18 @@ public class MusicFinderPlugin implements MethodCallHandler, PluginRegistry.Requ
    */
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "findermusic");
-    instance = new MusicFinderPlugin(registrar.activity(), channel);
+    instance = new FindermusicPlugin(registrar.activity(), channel);
     registrar.addRequestPermissionsResultListener(instance);
     channel.setMethodCallHandler(instance);
 
   }
 
-  private MusicFinderPlugin(Activity activity, MethodChannel channel) {
+  private FindermusicPlugin(Activity activity, MethodChannel channel) {
     this.activity = activity;
     this.channel = channel;
     this.channel.setMethodCallHandler(this);
-    if (MusicFinderPlugin.am == null) {
-      MusicFinderPlugin.am = (AudioManager) activity.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+    if (FindermusicPlugin.am == null) {
+      FindermusicPlugin.am = (AudioManager) activity.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
     }
 
   }
@@ -191,13 +191,13 @@ public class MusicFinderPlugin implements MethodCallHandler, PluginRegistry.Requ
   }
 
   private void mute(Boolean muted) {
-    if (MusicFinderPlugin.am == null)
+    if (FindermusicPlugin.am == null)
       return;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      MusicFinderPlugin.am.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+      FindermusicPlugin.am.adjustStreamVolume(AudioManager.STREAM_MUSIC,
           muted ? AudioManager.ADJUST_MUTE : AudioManager.ADJUST_UNMUTE, 0);
     } else {
-      MusicFinderPlugin.am.setStreamMute(AudioManager.STREAM_MUSIC, muted);
+      FindermusicPlugin.am.setStreamMute(AudioManager.STREAM_MUSIC, muted);
     }
   }
 

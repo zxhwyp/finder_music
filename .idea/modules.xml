@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/finder_music.iml" filepath="$PROJECT_DIR$/.idea/finder_music.iml" />
+      <module fileurl="file://$PROJECT_DIR$/findermusic.iml" filepath="$PROJECT_DIR$/findermusic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/findermusic_android.iml" filepath="$PROJECT_DIR$/android/findermusic_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/findermusic_example_android.iml" filepath="$PROJECT_DIR$/example/android/findermusic_example_android.iml" />
     </modules>
   </component>
 </project>
