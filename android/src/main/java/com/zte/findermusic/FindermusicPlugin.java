@@ -45,7 +45,6 @@ public class FindermusicPlugin implements FlutterPlugin, MethodCallHandler , Plu
   private Activity activity;
   private Map<String, Object> arguments;
   private boolean executeAfterPermissionGranted;
-  private static FindermusicPlugin instance;
   private Result pendingResult;
 
   //MusicPlayer

@@ -5,15 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "finder_music",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
             "name": "example",
-            "cwd": "example",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "example/lib/main.dart"
         }
     ]
 }
