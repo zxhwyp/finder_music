@@ -81,39 +81,39 @@ class _AudioAppState extends State<AudioApp> {
   }
 
   Future play() async {
-    final result = await audioPlayer.play(kUrl);
-    if (result == 1)
-      setState(() {
-        print('_AudioAppState.play... PlayerState.playing');
-        playerState = PlayerState.playing;
-      });
+//    final result = await audioPlayer.play(kUrl);
+//    if (result == 1)
+//      setState(() {
+//        print('_AudioAppState.play... PlayerState.playing');
+//        playerState = PlayerState.playing;
+//      });
   }
 
   Future _playLocal() async {
-    final result = await audioPlayer.play(localFilePath, isLocal: true);
-    if (result == 1) setState(() => playerState = PlayerState.playing);
+//    final result = await audioPlayer.play(localFilePath, isLocal: true);
+//    if (result == 1) setState(() => playerState = PlayerState.playing);
   }
 
   Future pause() async {
-    final result = await audioPlayer.pause();
-    if (result == 1) setState(() => playerState = PlayerState.paused);
+//    final result = await audioPlayer.pause();
+//    if (result == 1) setState(() => playerState = PlayerState.paused);
   }
 
   Future stop() async {
-    final result = await audioPlayer.stop();
-    if (result == 1)
-      setState(() {
-        playerState = PlayerState.stopped;
-        position = new Duration();
-      });
+//    final result = await audioPlayer.stop();
+//    if (result == 1)
+//      setState(() {
+//        playerState = PlayerState.stopped;
+//        position = new Duration();
+//      });
   }
 
   Future mute(bool muted) async {
-    final result = await audioPlayer.mute(muted);
-    if (result == 1)
-      setState(() {
-        isMuted = muted;
-      });
+//    final result = await audioPlayer.mute(muted);
+//    if (result == 1)
+//      setState(() {
+//        isMuted = muted;
+//      });
   }
 
   void onComplete() {
@@ -123,7 +123,7 @@ class _AudioAppState extends State<AudioApp> {
   @override
   void dispose() {
     super.dispose();
-    audioPlayer.stop();
+//    audioPlayer.stop();
   }
 
 //  Future<Uint8List> _loadFileBytes(String url, {OnError onError}) async {
@@ -194,8 +194,8 @@ class _AudioAppState extends State<AudioApp> {
             ? new Container()
             : new Slider(
                 value: position?.inMilliseconds?.toDouble() ?? 0,
-                onChanged: (double value) =>
-                    audioPlayer.seek((value / 1000).roundToDouble()),
+//                onChanged: (double value) =>
+//                    audioPlayer.seek((value / 1000).roundToDouble()),
                 min: 0.0,
                 max: duration.inMilliseconds.toDouble()),
         new Row(

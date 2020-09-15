@@ -5,9 +5,10 @@ package com.zte.findermusic;
  */
 import android.Manifest;
 import android.content.pm.PackageManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MusicHelper {
     public static final int STORAGE_PERMISSION_CODE = 10;

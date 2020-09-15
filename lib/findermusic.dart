@@ -22,18 +22,6 @@ class Findermusic {
     //durationNotifier = new ValueNotifier(new Duration());
   }
 
-  Future<dynamic> play(String url, {bool isLocal: false}) =>
-      _channel.invokeMethod('play', {"url": url, "isLocal": isLocal});
-
-  Future<dynamic> pause() => _channel.invokeMethod('pause');
-
-  Future<dynamic> stop() => _channel.invokeMethod('stop');
-
-  Future<dynamic> mute(bool muted) => _channel.invokeMethod('mute', muted);
-
-  Future<dynamic> seek(double seconds) =>
-      _channel.invokeMethod('seek', seconds);
-
   void setDurationHandler(TimeChangeHandler handler) {
     durationHandler = handler;
   }
